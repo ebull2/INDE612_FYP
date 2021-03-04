@@ -18,7 +18,6 @@ app.use(function(req, res, next) {
 
 app.get('/cryptoPrices', (req, res) => {
 
-    app.post('/cryptoPrices', (req, res) => {
 
         const cryptoPrices = [
 
@@ -42,4 +41,7 @@ app.post('/cryptoPrices', async(req, res) =>{
     res.send('success')
 })
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+
+app.listen(port, () => {
+    console.log(`Example app listening at http://localhost:${port}`)
+  })

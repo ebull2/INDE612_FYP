@@ -1,5 +1,4 @@
 
-
 const puppeteer = require('puppeteer');
 
 async function scrapeAddress(url) {
@@ -10,6 +9,7 @@ async function scrapeAddress(url) {
 
     //select xpath
     //el = destructing
+
 
    
     await page.waitForXPath('//*[@id="example"]/tbody/tr[1]/td[3]/span[2]');

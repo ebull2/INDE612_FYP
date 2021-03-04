@@ -22,6 +22,21 @@
 
 <script>
 
+        function submitCryptoPrices(){
+
+                const cryptoPricesUrl = document.querySelector('.cryptoPrices-input').value;
+
+                fetch('http://localhost:3000/cryptoPrices', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({cryptoPricesURL})
+                })    
+            }
+        
+
+
     function newEl(type, attrs={})  {
 
         const el = document.createElement(type);
@@ -76,7 +91,7 @@
  
          margin: 20px;
          padding: 20px;
-         background-color: blueviolet;
+         background-color: rgb(129, 76, 179);
 
 
     }
