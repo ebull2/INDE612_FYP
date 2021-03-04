@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNIFY</title>
+</head>
+<body>
+
+
+<h1>UNIFY</h1>
+
+<h2>Crypto Prices</h2>
+
+<button type="submit" onclick="submitCryptoPrices()"> SEE PRICES HERE</button>
+
+<br><br>
+
+<div class="container"></div>
+
+<script>
+
+    function newEl(type, attrs={})  {
+
+        const el = document.createElement(type);
+        for (let attr in attrs) {
+            const value = attrs[attr];
+            if (attr == 'innerText') el.innerText = value;
+            else el.setAttribute(attr, value);
+        }
+
+        return el;
+
+    }
+
+    async function loadcryptoPrices() {
+
+            const res = await fetch('http://localhost:3000/cryptoPrices')
+            const cryptoPrices = await res.json();
+    
+            const ctr  = document.querySelector('.container');
+
+         cryptoPrices.forEach(cryptoPrices => {
+            const card = newEl('div', {class: 'card'});
+            const img = newEl('img', {src: cryptoPrices.img});
+            const name = newEl('h2', {innerText: cryptoPrices.name});
+            const price = newEl('h4', {innerText: cryptoPrices.price});
+            
+            card.appendChild(img);
+            card.appendChild(name);
+            card.appendChild(price);
+            ctr.appendChild(card);
+
+          })
+
+        }
+        
+        loadcryptoPrices();
+
+
+</script>
+
+
+
+<style>
+
+    .container {
+
+       display: flex;
+       background-color: beige;
+    }
+
+    .card {
+ 
+         margin: 20px;
+         padding: 20px;
+         background-color: blueviolet;
+
+
+    }
+
+</style>
+    
+</body>
+</html>

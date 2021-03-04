@@ -1,0 +1,26 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "One Page Widget Hub",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ebull2/INDE612_FYP.git"
+  },
+  "keywords": [
+    "INDE_612"
+  ],
+  "author": "Ethan Bull",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ebull2/INDE612_FYP/issues"
+  },
+  "homepage": "https://github.com/ebull2/INDE612_FYP#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1"
+  }
+}
